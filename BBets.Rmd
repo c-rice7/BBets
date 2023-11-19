@@ -40,6 +40,28 @@ The function will be given a class_size by number of students, odds, and Number_
 ## what is their average earnings
 ## the standard deviation and a 95% confidence interval for their earnings?
   
+```{r}
+teachers <- numeric(40)
+for (i in 1:40){
+    teachers[i]<-BrLw()
+}
+fav_stats(teachers) -> profit
+
+
+c("Mr. Brownlow is making an avergae profit of")
+c(profit$mean)
+c("with a standard deviation of",profit$sd)
+
+c("The 95% confidence interval ranges from")
+c(profit$mean-2*profit$sd)
+c("to")
+c(profit$mean+2*profit$sd)
+```
+
+ 
+
+  
+  
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlows winnings (or losings)-->
 
 
