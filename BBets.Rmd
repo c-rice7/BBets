@@ -47,18 +47,14 @@ for (i in 1:40){
 }
 fav_stats(teachers) -> profit
 
+profit$mean
+profit$sd
 
-c("Mr. Brownlow is making an avergae profit of")
-c(profit$mean)
-c("with a standard deviation of",profit$sd)
-
-c("The 95% confidence interval ranges from")
-c(profit$mean-2*profit$sd)
-c("to")
-c(profit$mean+2*profit$sd)
+profit$mean-2*profit$sd
+profit$mean+2*profit$sd
 ```
 
- 
+With a sample size of 40 teachers running the same bet as Mr. Brownlow they will be making an average profit of `r profit$mean` with a standard deviation of `r profit$sd`. The 95% confidence interval ranges from `r profit$mean-2*profit$sd` to `r profit$mean+2*profit$sd`.
 
   
   
@@ -88,8 +84,6 @@ hist(teachers,main = "teachers Histogram",xlab = "teachers",ylab = "Frequency",c
 # What size of class makes the 2:1 bet fair?  Use manipulation of number of Students to tune Brownlows earnings to zero.
 
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
-
-
 
 
 
