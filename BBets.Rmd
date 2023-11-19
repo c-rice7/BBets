@@ -86,7 +86,15 @@ hist(teachers,main = "teachers Histogram",xlab = "teachers",ylab = "Frequency",c
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
 
 
+```{r}
+teachers <- numeric(1000)
+for (i in 1:1000){
+    teachers[i]<-BrLw(numClass=28)
+}
+fav_stats(teachers)
+```
 
+A class size of approximately 28 students gives relatively fair odds. It is not perfect but with a large sample size of 1000 teachers performing the bets the mean regularly falls within a single standard deviation of 0.
 
 
 
