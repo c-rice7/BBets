@@ -67,19 +67,8 @@ With a sample size of 40 teachers running the same bet as Mr. Brownlow they will
 <!--Decide on your methods:  In this section explain the approach you will take to attack the issue --- how will you decide on a likely estimate of professor Brownlow's earnings or losses after 637 bets. Also explain how you construct a 95% confidence interval about your estimate of his winnings !-->
 
 
-```{r}
-teachers <- numeric(1000)
-for (i in 1:1000){
-    teachers[i]<-BrLw(odds=4.39)
-}
-fav_stats(teachers)
-```
 
-With a sample size of 40 teachers the mean was unstable to a significant degree. To combat this we increased the sample size to 1000 teachers all running the same bet as Brownlow. This reduced the variance in the mean but it is still somewhat variable. The odds were also changed to be 4.39 from the baseline of 2 in order to make the bet as fair as possible on average.
 
-```{r}
-hist(teachers,main = "teachers Histogram",xlab = "teachers",ylab = "Frequency",col = "skyblue",border = "black")
-```
 
 # What size of class makes the 2:1 bet fair?  Use manipulation of number of Students to tune Brownlows earnings to zero.
 
@@ -89,12 +78,16 @@ hist(teachers,main = "teachers Histogram",xlab = "teachers",ylab = "Frequency",c
 ```{r}
 teachers <- numeric(1000)
 for (i in 1:1000){
-    teachers[i]<-BrLw(numClass=28)
+    teachers[i]<-BrLw(numClass=28.5)
 }
 fav_stats(teachers)
+
+
+hist(teachers,main = "Class Size Histogram",xlab = "profit",ylab = "Frequency",col = "skyblue",border = "black")
 ```
 
-A class size of approximately 28 students gives relatively fair odds. It is not perfect but with a large sample size of 1000 teachers performing the bets the mean regularly falls within a single standard deviation of 0.
+
+A class size of approximately 28-29 students gives relatively fair odds. It is not perfect but with a large sample size of 1000 teachers performing the bets the mean regularly falls within a single standard deviation of 0.
 
 
 
